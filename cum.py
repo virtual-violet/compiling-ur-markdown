@@ -4,8 +4,8 @@ from lxml.html import parse
 import os
 import datetime
 
-template_env = Environment(loader=FileSystemLoader(searchpath='./'))
-template = template_env.get_template('layout.html')
+template_env = Environment(loader=FileSystemLoader(searchpath='layouts/'))
+template = template_env.get_template('post-layout.html')
 articles = os.listdir('articles')
 
 # Format articles
@@ -78,7 +78,6 @@ for post in posts:
     posts_html_array.append(post_html_element)
 
 posts_html_combined = '<br>'.join(posts_html_array)
-print(posts_html_combined)
 
 blog_template = template_env.get_template('blog-layout.html')
 with open('blog.html', 'w') as blog_output:
