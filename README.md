@@ -1,5 +1,5 @@
 ## What does Compiling Ur Markdown do?
-Compiling Ur Markdown does just that: compiles your markdown. It's a very basic static site generator that takes a collection of markdown files, and turns them into a website.
+Compiling Ur Markdown does just that: compiles your markdown. It's a very basic static site generator for adding a simple blog to a site. It creates pages for each post, a `blog.html` page that lists each of them, and adds the 3 most recent to the homepage of your site
 
 ## What are the dependencies?
 Compiling Ur Markdown requires [markdown2](https://pypi.org/project/markdown2/), [Jinja2](https://pypi.org/project/Jinja2/), and [lxml](https://pypi.org/project/lxml/).
@@ -9,7 +9,7 @@ Place the Python script in the directory of your site. Create three directories:
 
 Your templates should be set up as such:
 
-`index-layout.html` must contain 3 links, like this:
+`index-layout.html` should be written as your site's actual homepage, but contain 3 links like this (which will be turned into the 3 most recent posts):
 
 ```html
 <a href="{{ post1_link }}">{{ post1_title }}</a>
